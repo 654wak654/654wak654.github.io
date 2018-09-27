@@ -22,9 +22,9 @@ gtag("config", "UA-124243774-1");
 <h1>Hi.</h1>
 <br>
 <p>
-<a href=http://bit.ly/wakdev><img src=images/github.png alt=Github style="margin:0 8px" height=32 width=32></a>
-<a href=http://bit.ly/wakgram><img src=images/instagram.png alt=Instagram style="margin:0 8px" height=32 width=32></a>
-<a href=http://bit.ly/waklinkedin><img src=images/linkedin.png alt=LinkedIn style="margin:0 8px" height=32 width=42></a>
+<a href=http://bit.ly/wakdev><img src=images/github.png alt=Github style="margin:0 8px" height=32 width=32 onmouseover="setSource(this, 'github-hover.png');" onmouseout="setSource(this, 'github.png');"></a>
+<a href=http://bit.ly/wakgram><img src=images/instagram.png alt=Instagram style="margin:0 8px" height=32 width=32 onmouseover="setSource(this, 'instagram-hover.png');" onmouseout="setSource(this, 'instagram.png');"></a>
+<a href=http://bit.ly/waklinkedin><img src=images/linkedin.png alt=LinkedIn style="margin:0 8px" height=32 width=45 onmouseover="setSource(this, 'linkedin-hover.png');" onmouseout="setSource(this, 'linkedin.png');"></a>
 <br>
 <br>(Ironically, you most likely came here from one of these places)
 </p>
@@ -32,5 +32,10 @@ gtag("config", "UA-124243774-1");
 Contact: ozan@egitmen.net
 </section>
 </div>
+<script>
+function setSource(element, source) {
+    element.setAttribute("src", "images/" + source);
+}
+</script>
 </body>
 </html>
