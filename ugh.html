@@ -36,7 +36,7 @@
         const video = document.createElement("video");
         video.src = "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4";
         video.style.display = "none";
-        document.appendChild(video);
+        document.body.appendChild(video);
 
         const image = new Konva.Image({
             image: video
