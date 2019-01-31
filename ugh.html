@@ -33,9 +33,10 @@
         const layer = new Konva.Layer();
         stage.add(layer);
 
-
         const video = document.createElement("video");
         video.src = "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4";
+        video.style.display = "none";
+        document.appendChild(video);
 
         const image = new Konva.Image({
             image: video
