@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/konva@2.4.2/konva.min.js"></script>
+    <meta charset="utf-8">
+    <title>Konva GIF Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #F0F0F0;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="fullscreen">Fullscreen</button>
+    <div id="container"></div>
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        const stage = new Konva.Stage({
+            container: "container",
+            width: width,
+            height: height
+        });
+
+        const layer = new Konva.Layer();
+        stage.add(layer);
+
+
+        const video = document.createElement("video");
+        video.src = "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4";
+
+        const image = new Konva.Image({
+            image: video
+        });
+        layer.add(image);
+
+        // update Konva.Image size when meta is loaded
+        video.addEventListener("loadedmetadata", () => {
+            image.width(video.videoWidth);
+            image.height(video.videoHeight);
+        });
+
+        const anim = new Konva.Animation(() => {
+            // do nothing, animation just need to update the layer
+        }, layer);
+
+        document.getElementById("play").addEventListener("click", () => {
+            video.play();
+            anim.start();
+        });
+        document.getElementById("pause").addEventListener("click", () => {
+            video.pause();
+            anim.stop();
+        });
+        document.getElementById("fullscreen").addEventListener("click", () => {
+            const canvas = stage.getContent().firstChild;
+            if (canvas.requestFullscreen) {
+                canvas.requestFullscreen();
+            } else if (canvas.mozRequestFullScreen) { // Firefox
+                canvas.mozRequestFullScreen();
+            } else if (canvas.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                canvas.webkitRequestFullscreen();
+            } else if (canvas.msRequestFullscreen) { // IE/Edge
+                canvas.msRequestFullscreen();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
