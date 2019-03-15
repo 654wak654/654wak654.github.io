@@ -9,23 +9,24 @@ gtag("js", new Date());
 gtag("config", "UA-124243774-1");
 </script>
 <title>Ozan Eğitmen</title>
-<meta http-equiv=Content-type content="text/html;charset=UTF-8">
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width, initial-scale=1">
-<link href=styles.css rel=stylesheet>
-<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel=stylesheet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<link href="styles.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-<div class=wrapper>
+<div class="wrapper">
 <section style="text-align: center;">
 <br>
 <h1>Hi.</h1>
 <br>
 <p>
-<a href=http://bit.ly/wakdev><img src=images/github.png alt=Github style="margin:0 8px" height=32 width=32 onmouseover="setSource(this, 'github-hover.png');" onmouseout="setSource(this, 'github.png');"></a>
-<a href=http://bit.ly/wakgram><img src=images/instagram.png alt=Instagram style="margin:0 8px" height=32 width=32 onmouseover="setSource(this, 'instagram-hover.png');" onmouseout="setSource(this, 'instagram.png');"></a>
-<a href=http://bit.ly/waklinkedin><img src=images/linkedin.png alt=LinkedIn style="margin:0 8px" height=32 width=45 onmouseover="setSource(this, 'linkedin-hover.png');" onmouseout="setSource(this, 'linkedin.png');"></a>
+<a href="http://bit.ly/wakdev"><img src="images/github.png" alt="Github" style="margin:0 8px" height="32" width="32" onmouseover="setSource(this, 'github-hover');" onmouseout="setSource(this, 'github');"></a>
+<a href="http://bit.ly/wakgram"><img src="images/instagram.png" alt="Instagram" style="margin:0 8px" height="32" width="32" onmouseover="setSource(this, 'instagram-hover');" onmouseout="setSource(this, 'instagram');"></a>
+<a href="http://bit.ly/waklinkedin"><img src="images/linkedin.png" alt="LinkedIn" style="margin:0 8px" height="32" width="45" onmouseover="setSource(this, 'linkedin-hover');" onmouseout="setSource(this, 'linkedin');"></a>
+<a href="http://bit.ly/wakspotify"><img src="images/spotify.png" alt="Spotify" style="margin:0 8px" height="32" width="32" onmouseover="setSource(this, 'spotify-hover');" onmouseout="setSource(this, 'spotify');"></a>
 <br>
 <br>(Ironically, you most likely came here from one of these places)
 </p>
@@ -35,14 +36,17 @@ Contact: ozan@egitmen.net
 </div>
 <script>
 function setSource(element, source) {
-    element.setAttribute("src", "images/" + source);
+    element.src = "images/" + source + ".png";
 }
-let tempImage0 = new Image();
-let tempImage1 = new Image();
-let tempImage2 = new Image();
-tempImage0.src = "images/github-hover.png";
-tempImage1.src = "images/instagram-hover.png";
-tempImage2.src = "images/linkedin-hover.png";
+[
+    "images/github-hover.png",
+    "images/instagram-hover.png",
+    "images/linkedin-hover.png",
+    "images/spotify-hover.png"
+].forEach(image => {
+    const tempImage = new Image();
+    tempImage.src = image;
+});
 </script>
 </body>
 </html>
