@@ -165,3 +165,12 @@ screen and (max-width:480px) {
 #linkedin:hover {
     background: url("images/linkedin-hover.png");
 }
+
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url("images/github-hover.png") url("images/instagram-hover.png") url("images/spotify-hover.png") url("images/linkedin-hover.png");
+}
