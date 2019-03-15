@@ -126,3 +126,42 @@ screen and (max-width:480px) {
         color: #444
     }
 }
+
+.button {
+    margin: 0 10px;
+    width: 32px;
+    height: 32px;
+}
+
+#github {
+    background: url("images/github.png");
+}
+
+#github:hover {
+    background: url("images/github-hover.png");
+}
+
+#instagram {
+    background: url("images/instagram.png");
+}
+
+#instagram:hover {
+    background: url("images/instagram-hover.png");
+}
+
+#spotify {
+    background: url("images/spotify.png");
+}
+
+#spotify:hover {
+    background: url("images/spotify-hover.png");
+}
+
+#linkedin {
+    width: 45px !important;
+    background: url("images/linkedin.png");
+}
+
+#linkedin:hover {
+    background: url("images/linkedin-hover.png");
+}
