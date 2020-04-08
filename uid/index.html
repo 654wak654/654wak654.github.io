@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BMM UID Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <link href="/styles.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section style="text-align: center;">
+            <p>Your UID is:</p>
+            <p id="uid"></p>
+            <div>
+                <input id="regenerate" type="button" value="🔄 Regenerate">
+                <input id="copy" type="button" value="📋 Copy">
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/uuid@7.0.3/dist/umd/uuidv4.min.js"></script>
+    <script src="https://bundle.run/js-xxhash@1.0.4"></script>
+
+    <script>
+        let uid;
+        function regenerate() {
+            uid = jsXxhash.xxHash32(uuidv4()).toString(16);
+
+            document.getElementById("uid").innerText = uid;
+        }
+
+        regenerate();
+        document.getElementById("regenerate").addEventListener("click", regenerate);
+
+        document.getElementById("copy").addEventListener("click", () => {
+            navigator.clipboard.writeText(uid);
+        });
+    </script>
+</body>
+
+</html>
