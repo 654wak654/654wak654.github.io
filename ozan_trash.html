@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aaa</title>
+</head>
+
+<body>
+    <p>Everytime you press the button, a loop() is simulated with random time difference</p>
+
+    <div style="margin-bottom: 20px;">
+        <label for="input">Sensor value</label>
+        <input id="input" type="text" value="">
+        <button id="button">Pls?</button>
+    </div>
+
+    <div>
+        <p id="milisVal"></p>
+        <p id="lastMilisVal"></p>
+        <p id="deltaVal"></p>
+        <p id="timerVal"></p>
+        <p id="stateVal"></p>
+        <p id="servoPosVal"></p>
+        <p id="holdingVal"></p>
+    </div>
+
+    <script>
+        // Simulator stuff
+        let milis = 0;
+
+        const button = document.getElementById("button");
+        const input = document.getElementById("input");
+        const milisVal = document.getElementById("milisVal");
+        const lastMilisVal = document.getElementById("lastMilisVal");
+        const deltaVal = document.getElementById("deltaVal");
+        const timerVal = document.getElementById("timerVal");
+        const stateVal = document.getElementById("stateVal");
+        const servoPosVal = document.getElementById("servoPosVal");
+        const holdingVal = document.getElementById("holdingVal");
+
+        // Actual variables (setup)
+        let lastMilis = milis;
+        let timer = 0;
+        let state = 0;
+        let servoPos = 1; // Assume open, but we can probably read this?
+
+        button.addEventListener("click", () => {
+            // Random time simulation
+            milis += Math.floor(Math.random() * 500);
+
+            // Actual program (loop)
+            const delta = milis - lastMilis;
+            lastMilis = milis;
+
+            const holding = input.value >= 20 && input.value <= 30; // Get input value
+
+            switch (state) {
+                case 0: // Closed state
+                    if (servoPos !== 0) {
+                        // TODO: Close servo + delay
+                        console.log("close");
+                        servoPos = 0;
+                    }
+
+                    if (holding) {
+                        timer += delta;
+
+                        if (timer > 2000) {
+                            state = 1;
+                        }
+                    } else {
+                        timer = 0;
+                    }
+
+                    break;
+                case 1: // Open state
+                    if (servoPos !== 1) {
+                        // TODO: Open servo + delay
+                        console.log("open");
+                        servoPos = 1;
+                    }
+
+                    timer += delta;
+
+                    if (holding && timer > 5000) {
+                        // TODO: Maintenance beep
+                        console.log("Maintenance beep");
+                        state = 2;
+                        timer = 0;
+                    } else if (timer > 15000) {
+                        state = 0;
+                        timer = 0;
+                    }
+
+                    break;
+                case 2: // Maintenance state
+                    // TODO: Reset timer here
+
+                    if (holding) {
+                        timer += delta;
+
+                        if (timer > 5000) {
+                            state = 0;
+                            timer = 0;
+                        }
+                    } else {
+                        timer = 0;
+                    }
+
+                    break;
+            }
+
+            // More sim stuff
+            milisVal.innerHTML = `milis: ${milis}`;
+            lastMilisVal.innerHTML = `lastMilis: ${lastMilis}`;
+            deltaVal.innerHTML = `delta: ${delta}`;
+            timerVal.innerHTML = `timer: ${timer}`;
+            stateVal.innerHTML = `state: ${state}`;
+            servoPosVal.innerHTML = `servoPos: ${servoPos}`;
+            holdingVal.innerHTML = `holding: ${holding}`;
+        });
+    </script>
+</body>
+
+</html>
