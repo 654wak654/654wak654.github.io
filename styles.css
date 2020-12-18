@@ -123,6 +123,10 @@ body::after {
         background: url(../images/body-background.png) #eae6d1;
     }
 
+    h1 {
+        color: #333;
+    }
+
     a {
         color: #39c;
     }
