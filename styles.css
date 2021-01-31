@@ -83,14 +83,6 @@ section {
     background: url("images/github-hover.png");
 }
 
-#instagram {
-    background: url("images/instagram.png");
-}
-
-#instagram:hover {
-    background: url("images/instagram-hover.png");
-}
-
 #spotify {
     background: url("images/spotify.png");
 }
@@ -114,7 +106,7 @@ body::after {
     height: 0;
     overflow: hidden;
     z-index: -1;
-    content: url("images/github-hover.png") url("images/instagram-hover.png") url("images/spotify-hover.png") url("images/linkedin-hover.png");
+    content: url("images/github-hover.png") url("images/spotify-hover.png") url("images/linkedin-hover.png");
 }
 
 @media (prefers-color-scheme: dark) {
