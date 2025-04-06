@@ -91,6 +91,14 @@ section {
     background: url("images/instagram-hover.png");
 }
 
+#bluesky {
+    background: url("images/bluesky.svg") no-repeat center;
+}
+
+#bluesky:hover {
+    background: url("images/bluesky-hover.svg") no-repeat center;
+}
+
 #spotify {
     background: url("images/spotify.png");
 }
@@ -114,7 +122,7 @@ body::after {
     height: 0;
     overflow: hidden;
     z-index: -1;
-    content: url("images/github-hover.png") url("images/instagram-hover.png") url("images/spotify-hover.png") url("images/linkedin-hover.png");
+    content: url("images/github-hover.png") url("images/instagram-hover.png") url("images/bluesky-hover.svg") url("images/spotify-hover.png") url("images/linkedin-hover.png");
 }
 
 @media (prefers-color-scheme: dark) {
