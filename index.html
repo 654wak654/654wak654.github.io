@@ -5,7 +5,155 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-<link href="styles.css" rel="stylesheet">
+<style>
+.wrapper,
+section {
+    position: relative;
+}
+
+html {
+    font-size: 100%;
+    font-family: "Atkinson Hyperlegible";
+}
+
+a:focus {
+    outline: dotted thin;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    color: #666;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 0 20px;
+    background: url(../images/body-background.png) #eae6d1;
+}
+
+h1 {
+    color: #333;
+    margin: 1rem 0 2rem 0;
+    line-height: 1.1;
+    font-size: 35px;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: #39c;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 700px;
+}
+
+section img {
+    max-width: 100%;
+}
+
+section {
+    display: block;
+    max-width: 90%;
+    padding: 30px 30px 40px;
+    margin: auto;
+    background: #fbfbfb;
+    border-radius: 3px;
+    border: 1px solid #cbcbcb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .09), inset 0 0 2px 2px rgba(255, 255, 255, .5), inset 0 0 5px 5px rgba(255, 255, 255, .4);
+}
+
+.button {
+    margin: 0 10px;
+    width: 32px;
+    height: 32px;
+}
+
+#github {
+    background: url("images/github.png");
+}
+
+#github:hover {
+    background: url("images/github-hover.png");
+}
+
+#instagram {
+    background: url("images/instagram.png");
+}
+
+#instagram:hover {
+    background: url("images/instagram-hover.png");
+}
+
+#bluesky {
+    background: url("images/bluesky.svg") no-repeat center;
+}
+
+#bluesky:hover {
+    background: url("images/bluesky-hover.svg") no-repeat center;
+}
+
+#spotify {
+    background: url("images/spotify.png");
+}
+
+#spotify:hover {
+    background: url("images/spotify-hover.png");
+}
+
+#linkedin {
+    width: 45px !important;
+    background: url("images/linkedin.png");
+}
+
+#linkedin:hover {
+    background: url("images/linkedin-hover.png");
+}
+
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url("images/github-hover.png") url("images/instagram-hover.png") url("images/bluesky-hover.svg") url("images/spotify-hover.png") url("images/linkedin-hover.png");
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #666;
+        background: url(../images/body-background.png) #eae6d1;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    a {
+        color: #39c;
+    }
+
+    section {
+        background: #fbfbfb;
+        border: 1px solid #cbcbcb;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .09), inset 0 0 2px 2px rgba(255, 255, 255, .5), inset 0 0 5px 5px rgba(255, 255, 255, .4);
+    }
+}
+</style>
 <link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
 </head>
