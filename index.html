@@ -11,9 +11,25 @@ section {
     position: relative;
 }
 
+@font-face {
+  font-family: "Nebula Sans";
+  src: url("./NebulaSans-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nebula Sans";
+  src: url("./NebulaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
     font-size: 100%;
-    font-family: "Atkinson Hyperlegible";
+    font-family: "Nebula Sans";
 }
 
 a:focus {
@@ -31,7 +47,7 @@ img {
 
 body {
     color: #666;
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
     padding: 0 0 20px;
     background: url(../images/body-background.png) #eae6d1;
@@ -154,7 +170,6 @@ body::after {
     }
 }
 </style>
-<link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
 </head>
 <body>
